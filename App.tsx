@@ -1,20 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import {
-  JSXElementConstructor,
-  Key,
-  ReactElement,
-  ReactNode,
-  useEffect,
-  useState,
-} from "react";
-import {
-  StyleSheet,
-  SafeAreaView,
-  Text,
-  View,
-  FlatList,
-  Image,
-} from "react-native";
+import { useEffect, useState } from "react";
+import { StyleSheet, Text, View, FlatList, Image } from "react-native";
 import axios from "axios";
 
 interface Tag {
@@ -49,8 +35,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.screenTitle}>List of posts</Text>
       <StatusBar style="auto" />
+      <Text style={styles.screenTitle}>List of posts</Text>
+
       <FlatList
         data={posts}
         renderItem={({ item }) => (
